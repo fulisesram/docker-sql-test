@@ -32,7 +32,11 @@ FROM sakila.film;
 
 --#8
 DELIMITER $$
-CREATE PROCEDURE GetAllMovies()
+CREATE PROCEDURE ChangeTitle (IN movie_id int, IN set_title varchar(20))
 BEGIN 
-	SELECT * FROM sakila.film;
+	UPDATE sakila.film SET title = set_title WHERE film_id = movie_id; 
+    SELECT * FROM sakila.film;
 END$$
+
+#Pasamos los parametros para el update
+call ChangeTitle('2', 'CAMBIO-titulo-peli2');
