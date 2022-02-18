@@ -38,5 +38,5 @@ BEGIN
     SELECT * FROM sakila.film;
 END$$
 
-#Pasamos los parametros para el update
+#Pasamos los parametros para el update en el stored procedure
 call ChangeTitle('2', 'CAMBIO-titulo-peli2');
